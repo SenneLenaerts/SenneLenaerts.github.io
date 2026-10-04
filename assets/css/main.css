@@ -3181,6 +3181,24 @@ input, select, textarea {
 			line-height: inherit;
 		}
 
+		#header > .icons {
+			display: flex;
+			align-items: center;
+			margin: 0 0 0 auto;
+		}
+
+			#header > .icons .icon:before {
+				letter-spacing: normal;
+			}
+
+			#header > .icons li {
+				padding: 0 0.5em;
+			}
+
+		#header > nav {
+			flex-grow: 0;
+		}
+
 			#header nav a {
 				border: 0;
 				display: block;
