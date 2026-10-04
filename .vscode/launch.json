@@ -8,8 +8,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open generic.html",
-            "file": "c:\\Users\\Senne\\Desktop\\html5up-forty\\generic.html"
+            "name": "Open index.html",
+            "file": "c:\\Users\\Senne\\Desktop\\PersonalWork\\Portfolio\\Webside\\SenneLenaerts.github.io\\index.html"
         }
     ]
 }
