@@ -196,6 +196,10 @@
 			background: #242943;
 			color: #ffffff;
 		}
+html:has(.showcase-dialog[open]),
+body:has(.showcase-dialog[open]) {
+			overflow: hidden;
+		}
 .showcase-dialog[open] {
 			display: grid;
 		}
@@ -429,11 +433,13 @@
 			color: #9bf1ff;
 		}
 .showcase-details {
-			position: relative;
 			min-width: 0;
+			min-height: 0;
 			max-height: 100%;
 			padding: clamp(2em, 4vw, 4em);
-			overflow: auto;
+			overflow-x: hidden;
+			overflow-y: auto;
+			overscroll-behavior: contain;
 		}
 .showcase-eyebrow {
 			margin: 0 3em 0.75em 0;
@@ -486,6 +492,7 @@
 		}
 .showcase-description p {
 				margin: 0;
+				overflow-wrap: anywhere;
 		}
 .showcase-dialog-close {
 				position: absolute;
