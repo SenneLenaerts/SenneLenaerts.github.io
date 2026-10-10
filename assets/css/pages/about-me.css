@@ -1,0 +1,594 @@
+/* About page introduction */
+
+.about-intro {
+/* Set to 0 for square corners or a length (for example 1rem) for rounded corners. */
+--profile-image-radius: 50%;
+display: grid;
+grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+gap: clamp(2em, 6vw, 5em);
+align-items: center;
+margin: 1.5em 0 1em;
+padding: clamp(1.5em, 4vw, 3.5em);
+border: 1px solid rgba(155, 241, 255, 0.28);
+border-left: 4px solid #9bf1ff;
+background: linear-gradient(135deg, rgba(155, 241, 255, 0.09), rgba(212, 212, 255, 0.025) 55%);
+box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
+}
+
+.gaming-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.75em;
+	width: min(100%, 32em);
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+.gaming-item {
+	min-width: 0;
+	text-align: center;
+}
+
+.gaming-game-title {
+	margin: 0.5em 0 0;
+	font-size: 0.85em;
+	line-height: 1.4;
+}
+
+.gaming-showcase {
+	width: min(100%, 42em);
+	margin: 0 auto;
+	padding: clamp(1em, 3vw, 2em);
+	border: 1px solid rgba(155, 241, 255, 0.2);
+	background: rgba(212, 212, 255, 0.035);
+	box-shadow: 0 1em 2.5em rgba(12, 15, 28, 0.16);
+	transition: width 0.45s ease;
+}
+
+.gaming-showcase.is-detail-open {
+	width: min(100%, 64em);
+}
+
+.gaming-showcase-content {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 0fr);
+	align-items: center;
+	gap: 0;
+	transition: grid-template-columns 0.45s ease, gap 0.45s ease;
+}
+
+.gaming-showcase-content.is-detail-open {
+	grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+	align-items: stretch;
+	gap: clamp(1em, 3vw, 2em);
+}
+
+.gaming-gallery-title {
+	width: max-content;
+	max-width: 100%;
+	margin: 1.5em auto 0;
+	text-align: center;
+}
+
+	.gaming-gallery-title h2 {
+		width: auto;
+	}
+
+	.gaming-gallery-title h2:after {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+@media screen and (max-width: 736px) {
+
+	.gaming-showcase {
+		padding: 1em;
+	}
+
+	.gaming-showcase.is-detail-open {
+		width: 100%;
+	}
+
+	.gaming-showcase-content.is-detail-open {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1em;
+	}
+
+	.gaming-detail-panel.is-open {
+		transform: translateY(0);
+	}
+
+	.gaming-detail-panel {
+		transform: translateY(1rem);
+	}
+
+	.gaming-detail-content {
+		min-width: 0;
+	}
+
+	.gaming-gallery {
+		gap: 0.5em;
+	}
+
+}
+
+.gaming-tile {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	height: auto;
+	aspect-ratio: 1;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border-radius: 0.4em;
+	border: 1px solid rgba(212, 212, 255, 0.2);
+	background: rgba(212, 212, 255, 0.08);
+	box-shadow: none;
+	font: inherit;
+	letter-spacing: normal;
+	line-height: normal;
+	text-align: inherit;
+	text-transform: none;
+	white-space: normal;
+	cursor: pointer;
+}
+
+	.gaming-tile:hover,
+	.gaming-tile:active {
+		box-shadow: none;
+	}
+
+	.gaming-tile:focus-visible {
+		outline: 2px solid #9bf1ff;
+		outline-offset: 2px;
+	}
+
+	.gaming-tile img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+
+	.gaming-tile:hover img,
+	.gaming-tile:focus-visible img {
+		transform: scale(1.04);
+		opacity: 0.85;
+	}
+
+.gaming-detail-panel {
+	width: 100%;
+	min-width: 0;
+	max-height: 0;
+	margin: 0;
+	overflow: hidden;
+	border: 0 solid rgba(155, 241, 255, 0.28);
+	background: linear-gradient(135deg, rgba(155, 241, 255, 0.09), rgba(212, 212, 255, 0.025) 55%);
+	box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(1.5rem);
+	transition: max-height 0.45s ease, opacity 0.3s ease, transform 0.45s ease, border-width 0.45s ease, visibility 0s linear 0.45s;
+}
+
+.gaming-detail-panel.is-open {
+	display: flex;
+	align-items: stretch;
+	max-height: 40em;
+	min-height: 100%;
+	border-width: 1px;
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0);
+	transition-delay: 0s;
+}
+
+.gaming-detail-content {
+	position: relative;
+	flex: 1;
+	min-width: 16em;
+	padding: clamp(1em, 2.5vw, 1.75em);
+}
+
+.gaming-detail-content h3 {
+	margin: 0 2em 0.2em 0;
+	font-size: clamp(1.75em, 4vw, 2.75em);
+}
+
+.gaming-detail-maker {
+	margin-bottom: 1.25em;
+	color: #9bf1ff;
+}
+
+.gaming-detail-opinion {
+	max-width: 48em;
+	margin-bottom: 0;
+}
+
+.gaming-detail-close {
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	width: 2.5em;
+	height: 2.5em;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: rgba(244, 244, 255, 0.75);
+	cursor: pointer;
+	font-size: 1.5em;
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+.gaming-detail-close:hover,
+.gaming-detail-close:focus-visible,
+.gaming-detail-close:active {
+	background: transparent;
+	box-shadow: none;
+	color: #ffffff;
+}
+
+#reading-writing > .inner > .major {
+	margin-bottom: 2em;
+}
+
+.about-section-heading,
+.about-carousel-heading {
+	text-align: center;
+}
+
+.about-section-heading h2,
+.about-carousel-heading h3 {
+	width: auto;
+}
+
+.about-section-heading h2:after,
+.about-carousel-heading h3:after {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.about-carousel {
+	max-width: 52em;
+	margin: 0 auto 3em;
+}
+
+.about-carousel-heading {
+	margin-bottom: 1.5em;
+}
+
+.about-carousel-stage {
+	display: flex;
+	align-items: stretch;
+	gap: 0.75em;
+}
+
+.about-carousel-card {
+	flex: 1;
+	min-height: 15em;
+	padding: clamp(1.5em, 4vw, 3em);
+	border: 1px solid rgba(155, 241, 255, 0.28);
+	border-left: 4px solid #9bf1ff;
+	background: linear-gradient(135deg, rgba(155, 241, 255, 0.09), rgba(212, 212, 255, 0.025) 55%);
+	box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
+}
+
+.about-carousel-card[hidden] {
+	display: none;
+}
+
+.about-carousel-arrow {
+	display: flex;
+	flex: 0 0 3.5rem;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	width: 3.5rem;
+	min-width: 0;
+	height: 3.5rem;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	color: #9bf1ff;
+	cursor: pointer;
+	font-size: 3.5rem;
+	letter-spacing: 0;
+	line-height: 1;
+	text-align: center;
+	text-transform: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.about-carousel-arrow:hover,
+.about-carousel-arrow:focus-visible {
+	background: transparent;
+	box-shadow: none;
+	color: #ffffff;
+	transform: scale(1.12);
+}
+
+.about-carousel-arrow:focus-visible {
+	outline: 2px solid #9bf1ff;
+	outline-offset: 2px;
+}
+
+.about-carousel-arrow:active {
+	background: transparent;
+	box-shadow: none;
+}
+
+.about-carousel-eyebrow {
+	margin-bottom: 0.75em;
+	color: #9bf1ff;
+	font-size: 0.8em;
+	font-weight: 600;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.about-carousel-card h4 {
+	margin-bottom: 0.75em;
+	font-size: clamp(1.35em, 3vw, 2em);
+}
+
+.about-carousel-card > :last-child {
+	margin-bottom: 0;
+}
+
+.about-book-cover {
+	display: block;
+	flex: 0 0 min(30%, 14em);
+	width: min(30%, 14em);
+	aspect-ratio: 3 / 4;
+	margin: 0;
+	border: 1px solid rgba(212, 212, 255, 0.28);
+	border-radius: 0.25em;
+	object-fit: cover;
+	box-shadow: 0 1em 2.5em rgba(12, 15, 28, 0.35);
+}
+
+.about-carousel[aria-label="Books I have read"] .about-carousel-card {
+	display: flex;
+	align-items: center;
+	gap: clamp(1em, 3vw, 2em);
+}
+
+.about-carousel[aria-label="Books I have read"] .about-carousel-card[hidden] {
+	display: none;
+}
+
+.about-book-copy {
+	flex: 1;
+	min-width: 0;
+}
+
+.about-book-copy h4 {
+	font-size: clamp(1.2em, 2.5vw, 1.8em);
+}
+
+.about-book-copy p {
+	margin-bottom: 0;
+}
+
+.about-album-card {
+	display: flex;
+	min-height: 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: clamp(1em, 3vw, 2em);
+	text-align: center;
+}
+
+.about-album-cover {
+	display: block;
+	width: min(100%, 18em);
+	aspect-ratio: 1;
+	margin: 0 auto 1.5em;
+	border: 1px solid rgba(212, 212, 255, 0.28);
+	border-radius: 0.35em;
+	object-fit: cover;
+	box-shadow: 0 1em 2.5em rgba(12, 15, 28, 0.35);
+}
+
+.about-album-card h4 {
+	margin-bottom: 0.35em;
+}
+
+.about-album-card > p {
+	margin-bottom: 0;
+	color: rgba(244, 244, 255, 0.75);
+}
+
+.about-music-carousel .about-carousel-stage {
+	align-items: center;
+	gap: 0;
+	overflow: hidden;
+}
+
+.about-music-carousel [data-carousel-previous] {
+	order: 0;
+	height: 8rem;
+}
+
+.about-music-carousel .about-album-card {
+	min-height: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.about-music-carousel .about-album-card.is-previous {
+	order: 1;
+}
+
+.about-music-carousel .about-album-card.is-current {
+	order: 2;
+}
+
+.about-music-carousel .about-album-card.is-next {
+	order: 3;
+}
+
+.about-music-carousel .about-album-card.is-previous,
+.about-music-carousel .about-album-card.is-next {
+	flex: 0 0 25%;
+	opacity: 0.38;
+	transform: scale(0.96);
+}
+
+.about-music-carousel .about-album-card.is-previous h4,
+.about-music-carousel .about-album-card.is-previous p,
+.about-music-carousel .about-album-card.is-next h4,
+.about-music-carousel .about-album-card.is-next p {
+	display: none;
+}
+
+.about-music-carousel .about-album-card.is-current {
+	flex: 0 0 38%;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.about-music-carousel .about-album-card[hidden] {
+	display: none;
+}
+
+.about-music-carousel .about-album-cover {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.about-music-carousel .about-album-card h4 {
+	font-size: clamp(1em, 2vw, 1.4em);
+}
+
+.about-music-carousel [data-carousel-next] {
+	order: 4;
+	height: 8rem;
+}
+
+.about-carousel-controls {
+	margin-top: 0.75em;
+}
+
+.about-carousel-status {
+	display: block;
+	color: rgba(244, 244, 255, 0.7);
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.about-profile {
+width: min(100%, 19em);
+margin: 0 auto;
+}
+
+.about-profile-image {
+display: block;
+width: 100%;
+aspect-ratio: 1;
+object-fit: cover;
+object-position: center 35%;
+border: 4px solid rgba(155, 241, 255, 0.6);
+border-radius: var(--profile-image-radius);
+box-shadow: 0 1em 2.5em rgba(12, 15, 28, 0.35);
+}
+
+.about-copy h2 {
+margin-bottom: 0.75em;
+font-size: clamp(1.75em, 3vw, 2.5em);
+line-height: 1.2;
+}
+
+.about-copy p {
+max-width: 42em;
+}
+
+.about-copy p:last-child {
+margin-bottom: 0;
+}
+
+.about-copy .about-eyebrow {
+margin-bottom: 0.75em;
+color: #9bf1ff;
+font-size: 0.8em;
+font-weight: 600;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+}
+
+@media screen and (max-width: 736px) {
+
+.about-intro {
+	grid-template-columns: 1fr;
+	gap: 2em;
+}
+
+.about-profile {
+	width: min(65%, 17em);
+}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.about-carousel-card {
+		min-height: 12em;
+		padding: 1.25em;
+	}
+
+	.about-carousel-stage {
+		gap: 0.5em;
+	}
+
+	.about-carousel-arrow {
+		flex-basis: 3rem;
+		width: 3rem;
+		height: 3rem;
+		font-size: 3rem;
+	}
+
+	.about-carousel[aria-label="Books I have read"] .about-carousel-card {
+		gap: 1em;
+		padding: 1em;
+	}
+
+	.about-book-cover {
+		flex-basis: 32%;
+		width: 32%;
+	}
+
+	.about-music-carousel .about-carousel-stage {
+		gap: 0.25em;
+	}
+
+	.about-music-carousel [data-carousel-previous],
+	.about-music-carousel [data-carousel-next] {
+		flex-basis: 2rem;
+		width: 2rem;
+		height: 6rem;
+	}
+
+	.about-music-carousel .about-album-card.is-previous,
+	.about-music-carousel .about-album-card.is-next {
+		flex-basis: 20%;
+	}
+
+	.about-music-carousel .about-album-card.is-current {
+		flex-basis: 40%;
+	}
+
+}
+

@@ -18,7 +18,8 @@ permalink: /Projects.html
 
 		<!-- Browser Icon -->
 		<link rel="icon" href="../images/browser-icon.png" />
-		<link rel="stylesheet" href="../assets/css/main-pages.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/pages/projects.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 
@@ -27,15 +28,6 @@ permalink: /Projects.html
 			{% include site-header.html %}
 
 			<div id="main" class="alt">
-				<section id="projects">
-					<div class="inner">
-						<header class="major">
-							<h1>Projects</h1>
-						</header>
-						<p>Explore my projects and prototypes. Select an image for a closer look and more detail.</p>
-					</div>
-				</section>
-
 				<section class="project-section" id="projects-list">
 					<div class="inner">
 						<header class="major">
@@ -134,57 +126,157 @@ permalink: /Projects.html
 			</div>
 
 			<dialog class="showcase-dialog" id="project-detail-1" aria-labelledby="project-detail-title-1">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger project image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Project images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom project image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add project image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="project-detail-title-1">Project title</h2>
-				<p>Add a longer description here, including what the project does, how it was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close project details">&times;</button>
+					<p class="showcase-eyebrow">Project</p>
+					<h2 id="project-detail-title-1">Project title</h2>
+					<ul class="project-tags" aria-label="Project contribution tags"><li>Game design</li><li>Level design</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the project</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain why the project was made</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the project</h3><p>Add a description of the project, what it does, and what you contributed.</p></div>
+				</div>
 			</dialog>
 
 			<dialog class="showcase-dialog" id="project-detail-2" aria-labelledby="project-detail-title-2">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger project image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Project images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom project image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add project image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="project-detail-title-2">Project title</h2>
-				<p>Add a longer description here, including what the project does, how it was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close project details">&times;</button>
+					<p class="showcase-eyebrow">Project</p>
+					<h2 id="project-detail-title-2">Project title</h2>
+					<ul class="project-tags" aria-label="Project contribution tags"><li>Game design</li><li>Programming</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the project</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain why the project was made</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the project</h3><p>Add a description of the project, what it does, and what you contributed.</p></div>
+				</div>
 			</dialog>
 
 			<dialog class="showcase-dialog" id="project-detail-3" aria-labelledby="project-detail-title-3">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger project image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Project images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom project image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add project image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom project image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="project-detail-title-3">Project title</h2>
-				<p>Add a longer description here, including what the project does, how it was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close project details">&times;</button>
+					<p class="showcase-eyebrow">Project</p>
+					<h2 id="project-detail-title-3">Project title</h2>
+					<ul class="project-tags" aria-label="Project contribution tags"><li>Level design</li><li>Writing</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the project</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain why the project was made</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the project</h3><p>Add a description of the project, what it does, and what you contributed.</p></div>
+				</div>
 			</dialog>
 
 			<dialog class="showcase-dialog" id="prototype-detail-1" aria-labelledby="prototype-detail-title-1">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger prototype image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Prototype images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom prototype image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add prototype image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="prototype-detail-title-1">Prototype title</h2>
-				<p>Add a longer description here, including what you were testing, how the prototype was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close prototype details">&times;</button>
+					<p class="showcase-eyebrow">Prototype</p>
+					<h2 id="prototype-detail-title-1">Prototype title</h2>
+					<ul class="project-tags" aria-label="Prototype contribution tags"><li>Game design</li><li>Prototyping</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the prototype</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain what the prototype was made to explore</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the prototype</h3><p>Describe what you tested, how the prototype works, and what you learned.</p></div>
+				</div>
 			</dialog>
 
 			<dialog class="showcase-dialog" id="prototype-detail-2" aria-labelledby="prototype-detail-title-2">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger prototype image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Prototype images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom prototype image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add prototype image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="prototype-detail-title-2">Prototype title</h2>
-				<p>Add a longer description here, including what you were testing, how the prototype was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close prototype details">&times;</button>
+					<p class="showcase-eyebrow">Prototype</p>
+					<h2 id="prototype-detail-title-2">Prototype title</h2>
+					<ul class="project-tags" aria-label="Prototype contribution tags"><li>Level design</li><li>Programming</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the prototype</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain what the prototype was made to explore</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the prototype</h3><p>Describe what you tested, how the prototype works, and what you learned.</p></div>
+				</div>
 			</dialog>
 
 			<dialog class="showcase-dialog" id="prototype-detail-3" aria-labelledby="prototype-detail-title-3">
-				<div class="showcase-image-placeholder">
-					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger prototype image</span>
+				<div class="showcase-media" data-showcase-gallery aria-label="Prototype images">
+					<button class="showcase-image-button showcase-image-primary" type="button" data-gallery-image aria-label="Zoom prototype image 1"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add prototype image</span></span></button>
+					<div class="showcase-image-strip">
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 2"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-button" type="button" data-gallery-image aria-label="Zoom prototype image 3"><span class="showcase-image-placeholder"><span><span class="icon regular fa-image" aria-hidden="true"></span>Add another image</span></span></button>
+						<button class="showcase-image-more" type="button" data-gallery-more hidden></button>
+					</div>
 				</div>
-				<h2 id="prototype-detail-title-3">Prototype title</h2>
-				<p>Add a longer description here, including what you were testing, how the prototype was made, and your role in it.</p>
-				<button class="button small close-showcase-dialog" type="button">Close</button>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close prototype details">&times;</button>
+					<p class="showcase-eyebrow">Prototype</p>
+					<h2 id="prototype-detail-title-3">Prototype title</h2>
+					<ul class="project-tags" aria-label="Prototype contribution tags"><li>Game design</li><li>Level design</li></ul>
+					<dl class="showcase-meta">
+						<div><dt>My role</dt><dd>Add your role in the prototype</dd></div>
+						<div><dt>Year</dt><dd>Add year</dd></div>
+						<div><dt>Made in</dt><dd>Add location</dd></div>
+						<div><dt>Reason</dt><dd>Explain what the prototype was made to explore</dd></div>
+					</dl>
+					<div class="showcase-description"><h3>About the prototype</h3><p>Describe what you tested, how the prototype works, and what you learned.</p></div>
+				</div>
+			</dialog>
+
+			<dialog class="showcase-lightbox" aria-label="Project image viewer">
+				<button class="showcase-lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+				<button class="showcase-lightbox-navigation showcase-lightbox-previous" type="button" aria-label="Previous image">&#10094;</button>
+				<div class="showcase-lightbox-content">
+					<div class="showcase-lightbox-stage"></div>
+					<p class="showcase-lightbox-count" aria-live="polite"></p>
+				</div>
+				<button class="showcase-lightbox-navigation showcase-lightbox-next" type="button" aria-label="Next image">&#10095;</button>
 			</dialog>
 
 			{% include site-footer.html %}
@@ -198,24 +290,6 @@ permalink: /Projects.html
 		<script src="../assets/js/breakpoints.min.js"></script>
 		<script src="../assets/js/util.js"></script>
 		<script src="../assets/js/main.js"></script>
-		<script>
-			document.querySelectorAll('.project-image-trigger').forEach(function (imageButton) {
-				var dialog = document.getElementById(imageButton.dataset.showcaseDialog);
-
-				imageButton.addEventListener('click', function () {
-					dialog.showModal();
-				});
-
-				dialog.querySelector('.close-showcase-dialog').addEventListener('click', function () {
-					dialog.close();
-				});
-
-				dialog.addEventListener('click', function (event) {
-					if (event.target === dialog) {
-						dialog.close();
-					}
-				});
-			});
-		</script>
+		<script src="../assets/js/pages/projects.js"></script>
 	</body>
 </html>
