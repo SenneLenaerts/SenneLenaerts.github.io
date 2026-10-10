@@ -17,9 +17,9 @@ permalink: /Projects.html
 		<meta property="og:type" content="website" />
 
 		<!-- Browser Icon -->
-		<link rel="icon" href="images/browser-icon.png" />
-		<link rel="stylesheet" href="assets/css/main-pages.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="../images/browser-icon.png" />
+		<link rel="stylesheet" href="../assets/css/main-pages.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 
 	<body class="is-preload">
@@ -187,27 +187,17 @@ permalink: /Projects.html
 				<button class="button small close-showcase-dialog" type="button">Close</button>
 			</dialog>
 
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/SenneLenaerts" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.linkedin.com/in/senne-lenaerts-680a812a0/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Senne Lenaerts</li>
-						<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+			{% include site-footer.html %}
+
 		</div>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
 		<script>
 			document.querySelectorAll('.project-image-trigger').forEach(function (imageButton) {
 				var dialog = document.getElementById(imageButton.dataset.showcaseDialog);
