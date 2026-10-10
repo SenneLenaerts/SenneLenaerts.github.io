@@ -371,8 +371,36 @@ box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
 	min-width: 0;
 }
 
+.about-book-heading {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.05em;
+	margin-bottom: 0.75em;
+}
+
 .about-book-copy h4 {
+	margin: 0;
 	font-size: clamp(1.2em, 2.5vw, 1.8em);
+}
+
+.about-book-status {
+	display: table;
+	flex: 0 0 auto;
+	margin: 0;
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+.about-book-status.is-completed {
+	color: #72d69a;
+}
+
+.about-book-status.is-currently-reading {
+	color: #75baff;
 }
 
 .about-book-copy p {
@@ -591,4 +619,3 @@ text-transform: uppercase;
 	}
 
 }
-
