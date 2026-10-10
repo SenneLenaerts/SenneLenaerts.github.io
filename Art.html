@@ -1,0 +1,145 @@
+---
+layout: null
+---
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Art | Senne Lenaerts</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Artwork by Senne Lenaerts." />
+
+		<!-- Link preview -->
+		<meta property="og:title" content="Art | Senne Lenaerts" />
+		<meta property="og:description" content="Artwork by Senne Lenaerts." />
+		<meta property="og:image" content="https://SenneLenaerts.github.io/images/preview.jpg" />
+		<meta property="og:type" content="website" />
+
+		<!-- Browser Icon -->
+		<link rel="icon" href="images/browser-icon.png" />
+		<link rel="stylesheet" href="assets/css/main-pages.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+			{% include site-header.html %}
+
+			<div id="main" class="alt">
+				<section id="art">
+					<div class="inner">
+						<header class="major">
+							<h1>Art</h1>
+						</header>
+						<p>Add an image and a short introduction for each work. Select an image to open its larger view and add a more detailed description.</p>
+
+						<div class="showcase-list">
+							<div class="showcase-row">
+								<button class="showcase-image-trigger" type="button" data-showcase-dialog="artwork-detail-1" aria-haspopup="dialog" aria-label="View artwork 1">
+									<span class="showcase-image-placeholder">
+										<span><span class="icon regular fa-image" aria-hidden="true"></span>Add artwork image</span>
+									</span>
+								</button>
+								<div class="showcase-copy">
+									<span class="showcase-title">Artwork title</span>
+									<span class="showcase-description">Add a short description of this work here.</span>
+								</div>
+							</div>
+
+							<div class="showcase-row">
+								<button class="showcase-image-trigger" type="button" data-showcase-dialog="artwork-detail-2" aria-haspopup="dialog" aria-label="View artwork 2">
+									<span class="showcase-image-placeholder">
+										<span><span class="icon regular fa-image" aria-hidden="true"></span>Add artwork image</span>
+									</span>
+								</button>
+								<div class="showcase-copy">
+									<span class="showcase-title">Artwork title</span>
+									<span class="showcase-description">Add a short description of this work here.</span>
+								</div>
+							</div>
+
+							<div class="showcase-row">
+								<button class="showcase-image-trigger" type="button" data-showcase-dialog="artwork-detail-3" aria-haspopup="dialog" aria-label="View artwork 3">
+									<span class="showcase-image-placeholder">
+										<span><span class="icon regular fa-image" aria-hidden="true"></span>Add artwork image</span>
+									</span>
+								</button>
+								<div class="showcase-copy">
+									<span class="showcase-title">Artwork title</span>
+									<span class="showcase-description">Add a short description of this work here.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<dialog class="showcase-dialog" id="artwork-detail-1" aria-labelledby="artwork-detail-title-1">
+				<div class="showcase-image-placeholder">
+					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger image of this work</span>
+				</div>
+				<h2 id="artwork-detail-title-1">Artwork title</h2>
+				<p>Add a longer description here: the idea behind the work, how it was made, or any details you want to share.</p>
+				<button class="button small close-showcase-dialog" type="button">Close</button>
+			</dialog>
+
+			<dialog class="showcase-dialog" id="artwork-detail-2" aria-labelledby="artwork-detail-title-2">
+				<div class="showcase-image-placeholder">
+					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger image of this work</span>
+				</div>
+				<h2 id="artwork-detail-title-2">Artwork title</h2>
+				<p>Add a longer description here: the idea behind the work, how it was made, or any details you want to share.</p>
+				<button class="button small close-showcase-dialog" type="button">Close</button>
+			</dialog>
+
+			<dialog class="showcase-dialog" id="artwork-detail-3" aria-labelledby="artwork-detail-title-3">
+				<div class="showcase-image-placeholder">
+					<span><span class="icon regular fa-image" aria-hidden="true"></span>Add a larger image of this work</span>
+				</div>
+				<h2 id="artwork-detail-title-3">Artwork title</h2>
+				<p>Add a longer description here: the idea behind the work, how it was made, or any details you want to share.</p>
+				<button class="button small close-showcase-dialog" type="button">Close</button>
+			</dialog>
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/SenneLenaerts" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/senne-lenaerts-680a812a0/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Senne Lenaerts</li>
+						<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			document.querySelectorAll('.showcase-image-trigger').forEach(function (imageButton) {
+				var dialog = document.getElementById(imageButton.dataset.showcaseDialog);
+
+				imageButton.addEventListener('click', function () {
+					dialog.showModal();
+				});
+
+				dialog.querySelector('.close-showcase-dialog').addEventListener('click', function () {
+					dialog.close();
+				});
+
+				dialog.addEventListener('click', function (event) {
+					if (event.target === dialog) {
+						dialog.close();
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

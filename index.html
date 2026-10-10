@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -13,8 +16,8 @@
 		<meta property="og:type" content="website" />
 		
 		<!-- Browser Icon -->
-		<link rel="icon" href="images/favicon.png" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/browser-icon.png" />
+		<link rel="stylesheet" href="assets/css/main-pages.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
@@ -23,28 +26,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Navigation bar -->
-					<!-- Header -->
-						<header id="header" class="alt">
-							<a href="index.html" class="logo"><strong>Portfolio</strong> <span>Senne Lenaerts</span></a>
-							<ul class="icons">
-								<li><a href="https://github.com/SenneLenaerts" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/senne-lenaerts-680a812a0/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<nav>
-								<a href="#menu">Menu</a>
-							</nav>
-						</header>
-
-					<!-- Menu -->
-						<nav id="menu">
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="AboutMe.html">About Me</a></li>
-								<li><a href="Art.html">Art</a></li>
-								<li><a href="Projects.html">Projects</a></li>
-							</ul>
-						</nav>
+				{% include site-header.html home=true %}
 
 
 				<!-- Banner -->

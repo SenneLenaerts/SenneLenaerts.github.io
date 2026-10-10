@@ -1,10 +1,13 @@
+---
+layout: null
+---
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
 		<title>About Me | Senne Lenaerts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Get to know Senne Lenaerts, an aspiring game designer and developer who enjoys games, reading, and writing." />
+		<meta name="description" content="About Me of Senne Lenaerts." />
 		
 		<!-- Link preview -->
 		<meta property="og:title" content="Senne Lenaerts | Portfolio" />
@@ -13,33 +16,15 @@
 		<meta property="og:type" content="website" />
 
         <!-- Browser Icon -->
-		<link rel="icon" href="images/favicon.png" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/browser-icon.png" />
+		<link rel="stylesheet" href="assets/css/main-pages.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
 	<body class="is-preload">
 		<div id="wrapper">
 
-			<header id="header">
-				<a href="index.html" class="logo"><strong>Portfolio</strong> <span>Senne Lenaerts</span></a>
-				<ul class="icons">
-					<li><a href="https://github.com/SenneLenaerts" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="https://www.linkedin.com/in/senne-lenaerts-680a812a0/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-				</ul>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
-
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="AboutMe.html">About Me</a></li>
-					<li><a href="Art.html">Art</a></li>
-					<li><a href="Projects.html">Projects</a></li>
-				</ul>
-			</nav>
+			{% include site-header.html %}
 
 			<div id="main" class="alt">
 				<section id="about">
@@ -75,12 +60,12 @@
 						<div class="row interest-cards">
 							<div class="col-4 col-12-medium">
 								<div class="box">
-									<span class="icon solid major fa-music"></span>
-									<h3>Listening to music</h3>
+									<span class="icon solid major fa-gamepad"></span>
+									<h3>Playing &amp; creating games</h3>
 									<p>
-                                        If I could music would be playing in my ears 24/7. Musicians I Like: 
-                                        <strong>English</strong>  <em>The Smiths</em>, <em>The Arctic Monkeys</em>, and <em>Radiohead</em>. 
-                                        <strong>Japanese</strong> <em>King Gnu</em>, <em>FAKE TYPE</em>, <em>Syudou</em>, and <em>Tyrkouaz</em>.
+                                        Game has become less of a daily activity I partake in, but something I still enjoy doing from time to time.
+                                        They are great source of inspiration after all. Now I mostly try to focus on putting ideas into pratice
+                                        making my own expieriences that will hopefully convey the same feelings and emotions I felt when playing games that inspired me.
                                     </p>
 								</div>
 							</div>
@@ -97,12 +82,12 @@
 							</div>
 							<div class="col-4 col-12-medium">
 								<div class="box">
-									<span class="icon solid major fa-gamepad"></span>
-									<h3>Playing &amp; creating games</h3>
+									<span class="icon solid major fa-music"></span>
+									<h3>Listening to music</h3>
 									<p>
-                                        Game has become less of a daily activity I partake in, but something I still enjoy doing from time to time.
-                                        They are great source of inspiration after all. Now I mostly try to focus on putting ideas into pratice
-                                        making my own expieriences that will hopefully convey the same feelings and emotions I felt when playing games that inspired me.
+                                        If I could music would be playing in my ears 24/7. Musicians I Like: 
+                                        <strong>English</strong>  <em>The Smiths</em>, <em>Arctic Monkeys</em>, and <em>Radiohead</em>. 
+                                        <strong>Japanese</strong> <em>King Gnu</em>, <em>FAKE TYPE</em>, <em>Syudou</em>, and <em>Tyrkouaz</em>.
                                     </p>
 								</div>
 							</div>
@@ -115,8 +100,18 @@
 						<header class="major">
 							<h2>Activities &amp; experiences</h2>
 						</header>
-						<div class="box">
-							<p></p>
+						<div class="row interest-cards">
+							<div class="col-4 col-12-medium">
+								<div class="box">
+									<span class="icon solid major fa-gamepad"></span>
+									<h3>Playing &amp; creating games</h3>
+									<p>
+                                        Game has become less of a daily activity I partake in, but something I still enjoy doing from time to time.
+                                        They are great source of inspiration after all. Now I mostly try to focus on putting ideas into pratice
+                                        making my own expieriences that will hopefully convey the same feelings and emotions I felt when playing games that inspired me.
+                                    </p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
