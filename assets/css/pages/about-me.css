@@ -340,6 +340,10 @@ box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
 	font-size: clamp(1.35em, 3vw, 2em);
 }
 
+.about-carousel[aria-label="Written works and worldbuilding"] .about-book-heading h4 {
+	font-size: clamp(1.35em, 3vw, 2em);
+}
+
 .about-carousel-card > :last-child {
 	margin-bottom: 0;
 }
@@ -379,7 +383,7 @@ box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
 	margin-bottom: 0.75em;
 }
 
-.about-book-copy h4 {
+.about-book-heading h4 {
 	margin: 0;
 	font-size: clamp(1.2em, 2.5vw, 1.8em);
 }
