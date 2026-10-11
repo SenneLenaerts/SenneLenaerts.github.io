@@ -198,8 +198,9 @@ box-shadow: 0 1.25em 3em rgba(12, 15, 28, 0.22);
 }
 
 .gaming-detail-content h3 {
-	margin: 0 2em 0.2em 0;
-	font-size: clamp(1.75em, 4vw, 2.75em);
+    margin: 0 1em 0.1em 0;
+    font-size: clamp(1.75em, 4vw, 2.25em);
+    line-height: 1.1;
 }
 
 .gaming-detail-maker {
