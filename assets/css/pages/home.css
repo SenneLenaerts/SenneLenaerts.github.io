@@ -308,9 +308,9 @@
 					text-transform: uppercase;
 				}
 #banner.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
+			height: auto;
+			min-height: calc(100vh - 3.25em);
+			max-height: none;
 		}
 #banner.major.alt {
 				opacity: 0.75;
@@ -395,9 +395,15 @@ body.is-preload #banner > .inner {
 #banner > .inner .content .banner-text .tagline {
 		font-size: 1.6em;
 		font-weight: 500;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.01em;
 		text-transform: none;
-		margin-bottom: 0.25em;
+		margin-bottom: 0.001em;
+	}
+#banner > .inner .content .banner-text .tagline-secondary {
+		font-size: 1.2em;
+		font-weight: 300;
+		letter-spacing: normal;
+		opacity: 0.75;
 	}
 #banner > .inner .content .banner-text .intro {
 		max-width: 34em;
@@ -470,4 +476,101 @@ body.is-preload #banner > .inner {
 #contact > .inner > :nth-child(2n - 1) {
 				padding: 3em 0 1em 0 ;
 			}
+}
+#main .tiles article.featured {
+		width: 60%;
+	}
+#main .tiles article.secondary {
+		width: 40%;
+	}
+	@media screen and (max-width: 736px) {
+		#banner.major {
+			min-height: 0;
+		}
+	}
+
+.carousel--current-work {
+	position: relative;
+	padding: 0 4.25rem;
+}
+
+.carousel--current-work .carousel-title {
+	margin-bottom: -0.25em;
+}
+
+.carousel--current-work .carousel-slide {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1.25em;
+}
+
+.carousel--current-work .carousel-slide[hidden] {
+	display: none;
+}
+
+.carousel--current-work .carousel-meta {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0 0.5em;
+	margin-bottom: 0.4em;
+}
+
+.carousel--current-work .carousel-meta .carousel-eyebrow,
+.carousel--current-work .carousel-status-label {
+	margin: 0;
+}
+
+.carousel--current-work .carousel-status-label {
+	color: #75baff;
+	font-weight: 600;
+}
+
+.carousel--current-work .carousel-status-label::before {
+	content: "·";
+	margin-right: 0.5em;
+	color: rgba(244, 244, 255, 0.7);
+}
+
+.carousel--current-work .carousel-description {
+	margin: 0;
+	padding-top: 0.4em;
+}
+
+.carousel--current-work .carousel-more {
+	margin-top: auto;
+	padding-top: 1em;
+	display: flex;
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.carousel--current-work .carousel-more .button {
+	margin: 0;
+}
+
+.carousel--current-work .carousel-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	margin: 0;
+	pointer-events: none;
+}
+
+.carousel--current-work .carousel-arrow {
+	align-self: stretch;
+	height: auto;
+	pointer-events: auto;
+}
+
+@media screen and (max-width: 736px) {
+	.carousel--current-work {
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
 }

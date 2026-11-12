@@ -1,0 +1,111 @@
+---
+layout: null
+permalink: /Writing.html
+---
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Writing | Senne Lenaerts</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Written works by Senne Lenaerts." />
+
+		<meta property="og:title" content="Writing | Senne Lenaerts" />
+		<meta property="og:description" content="Written works by Senne Lenaerts." />
+		<meta property="og:image" content="https://SenneLenaerts.github.io/images/preview.jpg" />
+		<meta property="og:type" content="website" />
+
+		<link rel="icon" href="../images/browser-icon.png" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/pages/projects.css" />
+		<link rel="stylesheet" href="../assets/css/pages/writing.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+			{% include site-header.html %}
+
+			<div id="main" class="alt">
+				<section id="written-works">
+					<div class="inner">
+						<header class="major">
+							<h2>Written Works</h2>
+						</header>
+						{% assign writing_works = site.data.current_work | where: "type", "Writing" %}
+						{% if writing_works.size > 0 %}
+						<div class="work-gallery">
+							{% for work in writing_works %}
+							{% assign status_label = "On hold" %}
+							{% assign status_class = "" %}
+							{% case work.status %}
+							{% when "in_progress" %}
+							{% assign status_label = "Currently writing" %}
+							{% assign status_class = "is-in-progress" %}
+							{% when "completed" %}
+							{% assign status_label = "Completed" %}
+							{% assign status_class = "is-completed" %}
+							{% endcase %}
+							<article class="work-card">
+								<button class="work-card-trigger" type="button" data-showcase-dialog="writing-detail-{{ forloop.index }}" aria-haspopup="dialog" aria-label="View details for {{ work.title | escape }}">
+									<span class="work-card-cover writing-card-cover">
+										<span class="icon solid fa-book-open" aria-hidden="true"></span>
+										<span>{{ work.title | escape }}</span>
+									</span>
+								</button>
+								<h3 class="work-card-title">{{ work.title | escape }}</h3>
+								<p class="writing-status {{ status_class }}">{{ status_label }}</p>
+							</article>
+							{% endfor %}
+						</div>
+						{% else %}
+						<p>No written works have been added yet.</p>
+						{% endif %}
+					</div>
+				</section>
+			</div>
+
+			{% for work in writing_works %}
+			{% assign status_label = "On hold" %}
+			{% assign status_class = "" %}
+			{% case work.status %}
+			{% when "in_progress" %}
+			{% assign status_label = "Currently writing" %}
+			{% assign status_class = "is-in-progress" %}
+			{% when "completed" %}
+			{% assign status_label = "Completed" %}
+			{% assign status_class = "is-completed" %}
+			{% endcase %}
+			{% assign work_details = work.details | default: work.description %}
+			<dialog class="showcase-dialog writing-dialog" id="writing-detail-{{ forloop.index }}" aria-labelledby="writing-detail-title-{{ forloop.index }}">
+				<div class="showcase-media writing-cover-panel">
+					<div class="writing-cover">
+						<span class="icon solid fa-book-open" aria-hidden="true"></span>
+						<span>{{ work.title | escape }}</span>
+					</div>
+				</div>
+				<div class="showcase-details">
+					<button class="showcase-dialog-close" type="button" aria-label="Close writing details">&times;</button>
+					<p class="eyebrow writing-dialog-type">{{ work.type | escape }}</p>
+					<h2 id="writing-detail-title-{{ forloop.index }}">{{ work.title | escape }}</h2>
+					<p class="writing-status {{ status_class }}">{{ status_label }}</p>
+					<div class="showcase-description">
+						<h3>About this work</h3>
+						<p>{{ work_details | escape }}</p>
+					</div>
+				</div>
+			</dialog>
+			{% endfor %}
+
+			{% include site-footer.html %}
+		</div>
+
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+	</body>
+</html>

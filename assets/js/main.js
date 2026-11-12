@@ -263,4 +263,125 @@
 
 			});
 
+	$('[data-carousel]').each(function() {
+
+		var $carousel = $(this),
+			$slides = $carousel.find('.carousel-slide'),
+			$previous = $carousel.find('[data-carousel-previous]'),
+			$next = $carousel.find('[data-carousel-next]'),
+			$status = $carousel.find('[data-carousel-status]'),
+			showPreviews = $carousel.is('[data-carousel-preview]'),
+			autoplayInterval = parseInt($carousel.attr('data-carousel-interval'), 10),
+			autoplayTimer,
+			index = 0,
+			total = $slides.length;
+
+		if (total < 2)
+			return;
+
+		var showSlide = function() {
+
+			if (showPreviews) {
+
+				var previousIndex = (index + total - 1) % total,
+					nextIndex = (index + 1) % total;
+
+				$slides.each(function(i) {
+					var $slide = $(this),
+						isPrevious = i == previousIndex,
+						isCurrent = i == index,
+						isNext = i == nextIndex,
+						isVisible = isPrevious || isCurrent || isNext;
+
+					$slide
+						.prop('hidden', !isVisible)
+						.attr('aria-hidden', isCurrent ? 'false' : 'true')
+						.attr('aria-label', (i + 1) + ' of ' + total)
+						.toggleClass('is-previous', isPrevious)
+						.toggleClass('is-current', isCurrent)
+						.toggleClass('is-next', isNext);
+				});
+
+			}
+
+			else {
+
+				$slides.each(function(i) {
+					$(this)
+						.prop('hidden', i != index)
+						.attr('aria-label', (i + 1) + ' of ' + total);
+				});
+
+			}
+
+			$status.text((index + 1) + ' / ' + total);
+
+		};
+
+		$previous.on('click', function() {
+			index = (index + total - 1) % total;
+			showSlide();
+		});
+
+		$next.on('click', function() {
+			index = (index + 1) % total;
+			showSlide();
+		});
+
+		if (autoplayInterval > 0) {
+			var stopAutoplay = function() {
+				window.clearInterval(autoplayTimer);
+			};
+
+			var startAutoplay = function() {
+				stopAutoplay();
+
+				if (document.hidden || $carousel.is(':hover') || $carousel.find(':focus').length)
+					return;
+
+				autoplayTimer = window.setInterval(function() {
+					index = (index + 1) % total;
+					showSlide();
+				}, autoplayInterval);
+			};
+
+			$carousel.on('mouseenter focusin', stopAutoplay);
+			$carousel.on('mouseleave', startAutoplay);
+			$carousel.on('focusout', function() {
+				window.setTimeout(startAutoplay, 0);
+			});
+			$(document).on('visibilitychange', function() {
+				if (document.hidden)
+					stopAutoplay();
+				else
+					startAutoplay();
+			});
+
+			startAutoplay();
+		}
+
+		showSlide();
+
+	});
+
+	$('[data-showcase-dialog]').each(function() {
+
+		var $trigger = $(this),
+			dialog = document.getElementById($trigger.attr('data-showcase-dialog'));
+
+		$trigger.on('click', function() {
+			dialog.showModal();
+		});
+
+		$(dialog).find('.showcase-dialog-close').on('click', function() {
+			dialog.close();
+		});
+
+		$(dialog).on('click', function(event) {
+			if (event.target === dialog)
+				dialog.close();
+		});
+
+	});
+
 })(jQuery);

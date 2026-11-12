@@ -1,21 +1,4 @@
 	// Project and prototype image galleries.
-		document.querySelectorAll('.project-image-trigger').forEach(function(imageButton) {
-			var dialog = document.getElementById(imageButton.dataset.showcaseDialog);
-
-			imageButton.addEventListener('click', function() {
-				dialog.showModal();
-			});
-
-			dialog.querySelector('.showcase-dialog-close').addEventListener('click', function() {
-				dialog.close();
-			});
-
-			dialog.addEventListener('click', function(event) {
-				if (event.target === dialog)
-					dialog.close();
-			});
-		});
-
 		var lightbox = document.querySelector('.showcase-lightbox');
 
 		if (lightbox) {
@@ -101,4 +84,3 @@
 				}
 			});
 		}
-

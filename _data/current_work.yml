@@ -1,0 +1,19 @@
+- id: "the-floor-is-lava"
+  title: "The floor is Lava"
+  type: "Prototype"
+  status: "in_progress"
+  description: "A prototype build with consentric design working from the core mechanic of avoidance."
+  url: "Projects.html#prototypes"
+
+- id: "where-the-path-leads"
+  title: "Where The Path Leads"
+  type: "Writing"
+  status: "in_progress"
+  description: "Where The Path Leads is a book series set in a world at the end of an age, as it stands on the threshold of the next. Following the journey of Samuel through these changing times."
+  details: >-
+    Where The Path Leads is a book series set in a world at the end of an age, as it stands on the threshold of the next.
+    The first book takes place in Pilantrop, where Samuel finds himself a refugee. Haunted by visions of how he came to be there and enforced by aching pain in his heart. He struggles to find his footing. Those around him seem to have moved on, acclimating to their new environment, but he remains lost. Standing at the edge of a cliff, looking down into the abyss, his mind wandering to their depths, all the while clinging to what little remains of the mundane life he once knew.
+    The world will not wait for him to find his way. As Samuel stagnates, trapped in place, everything else remains in motion. The world stands on the brink of eruption, and he will have to make a choice if he hopes to survive the fallout.
+  url: "Writing.html#written-works"
+
+

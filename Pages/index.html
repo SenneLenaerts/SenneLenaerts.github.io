@@ -30,87 +30,122 @@ permalink: /index.html
 
 				{% include site-header.html home=true %}
 
-
 				<!-- Banner -->
-					<section id="banner" class="major">
+				<section id="banner" class="major">
 						<div class="inner">
 							<header class="major">
 								<h1>Senne Lenaerts</h1>
 							</header>
 							<div class="content">
 								<div class="banner-text">
-									<p class="tagline"><strong>Game designer &amp; developer</strong></p>
-									<p class="intro"></p>
+									<p class="tagline"><strong>Game Designer - Game Developer - Aspiring Author</strong></p>
+									<p class="intro">Belgian game designer and developer with a drive to create fun gaming experiences and a passion for storytelling & worldbuilding.</p>
 								</div>
 								<ul class="actions">
 									<li><a href="#contact" class="button next scrolly">Contact Me</a></li>
 								</ul>
 							</div>
+							{% assign current_works = site.data.current_work | where: "status", "in_progress" %}
+							{% if current_works.size > 0 %}
+							<div class="carousel carousel--current-work" data-carousel data-carousel-interval="20000" aria-labelledby="current-work-heading">
+								<div class="carousel-track">
+									{% for work in current_works %}
+									<article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ current_works.size }}" {% unless forloop.first %}hidden{% endunless %}>
+										<h3 class="carousel-title">{{ work.title | escape }}</h3>
+										<div class="carousel-meta">
+											<p class="eyebrow carousel-eyebrow">{{ work.type | escape }}</p>
+											<p class="carousel-status-label">In Progress...</p>
+										</div>
+										<p class="carousel-description">{{ work.description | escape }}</p>
+										<div class="carousel-more">
+											<a class="button" href="{{ work.url | relative_url }}">Learn more</a>
+										</div>
+									</article>
+									{% endfor %}
+								</div>
+								{% if current_works.size > 1 %}
+								<div class="carousel-controls" role="group" aria-label="Currently working on slides">
+									<button class="carousel-arrow" type="button" data-carousel-previous aria-label="Previous work">&lsaquo;</button>
+									<button class="carousel-arrow" type="button" data-carousel-next aria-label="Next work">&rsaquo;</button>
+								</div>
+								{% endif %}
+							</div>
+							{% endif %}
 						</div>
-					</section>
-				
+				</section>
+
 				<!-- Main -->
-					<div id="main">
-						<section id="one" class="tiles">
-							<article>
-								<span class="image">
-									<img src="../images/pic01.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3><a href="AboutMe.html" class="link">About Me</a></h3>
-									<p>Who am I?</p>
-								</header>
-							</article>
-							<article>
-								<span class="image">
-									<img src="../images/pic03.jpg" alt="" />
-								</span>
-								<header class="major">
-									<h3><a href="Projects.html" class="link">Projects</a></h3>
-									<p>Projects I've worked on</p>
-								</header>
-							</article>
-						</section>
-					</div>
+				<div id="main">
+					<section id="one" class="tiles">
+						<article class="featured">
+							<span class="image">
+								<img src="../images/pic03.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Projects.html" class="link">Game Projects</a></h3>
+								<p>Game Projects I've worked on</p>
+							</header>
+						</article>
+							<article class="secondary">
+							<span class="image">
+								<img src="../images/pic02.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="Writing.html" class="link">Writing</a></h3>
+								<p>Written works and worldbuilding</p>
+							</header>
+						</article>
+						<article>
+							<span class="image">
+								<img src="../images/pic01.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="AboutMe.html" class="link">About Me</a></h3>
+								<p>Who am I?</p>
+							</header>
+						</article>
+
+					</section>
+				</div>
 
 				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
 							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="mailto:senne.lenaerts04@gmail.com">senne.lenaerts04@gmail.com</a>
+								</div>
 							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="mailto:senne.lenaerts04@gmail.com">senne.lenaerts04@gmail.com</a>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+						</section>
+					</div>
+				</section>
 
-			{% include site-footer.html %}
+				{% include site-footer.html %}
 
 			</div>
 

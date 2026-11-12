@@ -1,6 +1,6 @@
 (function($) {
 
-	// About page carousels.
+	// Game selection showcase.
 		$('.gaming-showcase').each(function() {
 
 			var $showcase = $(this),
@@ -56,73 +56,5 @@
 			});
 
 		});
-
-		$('[data-about-carousel]').each(function() {
-
-			var $carousel = $(this),
-				$cards = $carousel.find('.about-carousel-card'),
-				$previous = $carousel.find('[data-carousel-previous]'),
-				$next = $carousel.find('[data-carousel-next]'),
-				$status = $carousel.find('[data-carousel-status]'),
-				showPreviews = $carousel.is('[data-carousel-preview]'),
-				index = 0,
-				total = $cards.length;
-
-			if (total < 2)
-				return;
-
-			var showCard = function() {
-
-				if (showPreviews) {
-
-					var previousIndex = (index + total - 1) % total,
-						nextIndex = (index + 1) % total;
-
-					$cards.each(function(i) {
-						var $card = $(this),
-							isPrevious = i == previousIndex,
-							isCurrent = i == index,
-							isNext = i == nextIndex,
-							isVisible = isPrevious || isCurrent || isNext;
-
-						$card
-							.prop('hidden', !isVisible)
-							.attr('aria-hidden', isCurrent ? 'false' : 'true')
-							.attr('aria-label', (i + 1) + ' of ' + total)
-							.toggleClass('is-previous', isPrevious)
-							.toggleClass('is-current', isCurrent)
-							.toggleClass('is-next', isNext);
-					});
-
-				}
-
-				else {
-
-					$cards.each(function(i) {
-						$(this)
-							.prop('hidden', i != index)
-							.attr('aria-label', (i + 1) + ' of ' + total);
-					});
-
-				}
-
-				$status.text((index + 1) + ' / ' + total);
-
-			};
-
-			$previous.on('click', function() {
-				index = (index + total - 1) % total;
-				showCard();
-			});
-
-			$next.on('click', function() {
-				index = (index + 1) % total;
-				showCard();
-			});
-
-			showCard();
-
-		});
-
 
 })(jQuery);
